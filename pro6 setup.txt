@@ -1,0 +1,12 @@
+pro6 database setup 
+
+CREATE SCHEMA `studentdb` ;
+CREATE USER 'suji'@'localhost' IDENTIFIED BY 'yourpassword';
+GRANT ALL PRIVILEGES ON studentdb.* TO 'suji'@'localhost';
+FLUSH PRIVILEGES;
+SHOW GRANTS FOR 'suji'@'localhost';
+SELECT * FROM students;
+
+
+
+DROP USER IF EXISTS 'suji'@'localhost';
