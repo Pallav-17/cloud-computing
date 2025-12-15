@@ -1,0 +1,23 @@
+-- Step 1: Create the database
+CREATE DATABASE data;
+
+-- Step 2: Create a new user
+CREATE USER 'newuser'@'localhost' IDENTIFIED BY 'NewUser@123';
+
+-- Step 3: Grant privileges to the user on the database
+GRANT ALL PRIVILEGES ON data.* TO 'newuser'@'localhost';
+
+-- Step 4: Apply changes
+FLUSH PRIVILEGES;
+SELECT * FROM student;
+
+
+DROP USER IF EXISTS 'newuser'@'localhost';
+
+
+postman 
+{
+    "name": "John Doe",
+    "age": 20
+}
+http://localhost:8080/students
